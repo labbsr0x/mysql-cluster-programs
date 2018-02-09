@@ -5,7 +5,7 @@ If you run **MySQL Cluster** with Docker from the official image you will notice
 
 ## Which are the programs included?
 
-[https://dev.mysql.com/doc/mysql-cluster-excerpt/5.7/en/mysql-cluster-programs.html](NDB Cluster Programs) are specialized pieces of code used to manage NDB Clusters, including Data and SQL Node processes (ndbd, ndbmtd, ndb_mgmd, and mysqld) and the management client (ndb_mgm). The list of programs included are:
+[NDB Cluster Programs](https://dev.mysql.com/doc/mysql-cluster-excerpt/5.7/en/mysql-cluster-programs.html) are specialized pieces of code used to manage NDB Clusters, including Data and SQL Node processes (ndbd, ndbmtd, ndb_mgmd, and mysqld) and the management client (ndb_mgm). The list of programs included are:
 
 * ndbd — The NDB Cluster Data Node Daemon
 * ndbinfo_select_all — Select From ndbinfo Tables
