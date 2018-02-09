@@ -1,11 +1,11 @@
-
+![logo](https://www.mysql.com/common/logos/logo-mysql-170x115.png)
 ## What is the porpuse of this image?
 
 If you run **MySQL Cluster** with Docker from the official image you will notice that the image was built using the **minimal** version of the MySQL Cluster Server. This means that the image doesn't have all the tooling you'll need to play around and manage MySQL Cluster. That makes sense since you want the most optimized version of the server in a production environment, but you still need a tooling belt to get your stuff done. 
 
-## Which are the programs included?
+## So what?
 
-[NDB Cluster Programs](https://dev.mysql.com/doc/mysql-cluster-excerpt/5.7/en/mysql-cluster-programs.html) are specialized pieces of code used to manage NDB Clusters, including Data and SQL Node processes (ndbd, ndbmtd, ndb_mgmd, and mysqld) and the management client (ndb_mgm). The list of programs included are:
+A good approach is to have your server runtime and the toolset running in different hosts and to achieve this you need another Docker image - other than the server official - with the [NDB Cluster Programs](https://dev.mysql.com/doc/mysql-cluster-excerpt/5.7/en/mysql-cluster-programs.html). Those are specialized pieces of code provided by MySQL itself that are used to manage NDB Clusters, including Data and SQL Node processes (ndbd, ndbmtd, ndb_mgmd, and mysqld) and the management client (ndb_mgm). The list of programs included are:
 
 * ndbd — The NDB Cluster Data Node Daemon
 * ndbinfo_select_all — Select From ndbinfo Tables
