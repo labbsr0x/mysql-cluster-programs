@@ -18,4 +18,4 @@ RUN yum install -y mysql-cluster-community-common-7.5.9-1.el7.x86_64.rpm \
     && yum install -y mysql-cluster-community-client-7.5.9-1.el7.x86_64.rpm \
     && yum install -y mysql-cluster-community-server-7.5.9-1.el7.x86_64.rpm
 
-CMD ["ndb_mgm", "$MANAGER_HOST"]
+CMD ["ndb_mgmd"]
