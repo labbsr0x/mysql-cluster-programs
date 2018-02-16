@@ -5,7 +5,7 @@ If you run **MySQL Cluster** with Docker from the official image you will notice
 
 ## So what?
 
-A good approach is to have your server runtime and the toolset running in different hosts and to achieve this you need another Docker image - other than the server official - with the [NDB Cluster Programs](https://dev.mysql.com/doc/mysql-cluster-excerpt/5.7/en/mysql-cluster-programs.html). Those are specialized pieces of code provided by MySQL itself that are used to manage NDB Clusters, including Data and SQL Node processes (ndbd, ndbmtd, ndb_mgmd, and mysqld) and the management client (ndb_mgm). The list of programs included are:
+We built an MySQL Cluster image with all those toolings, i.e., the [NDB Cluster Programs](https://dev.mysql.com/doc/mysql-cluster-excerpt/5.7/en/mysql-cluster-programs.html). Those are specialized pieces of code provided by MySQL itself that are used to manage NDB Clusters, including Data and SQL Node processes (ndbd, ndbmtd, ndb_mgmd, and mysqld) and the management client (ndb_mgm). The list of programs included are:
 
 * ndbd — The NDB Cluster Data Node Daemon
 * ndbinfo_select_all — Select From ndbinfo Tables

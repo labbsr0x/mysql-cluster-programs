@@ -1,21 +1,13 @@
-FROM oraclelinux:7-slim
+FROM mysql/mysql-cluster:7.5
 
 RUN yum install -y wget
 RUN wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 RUN rpm -ivh epel-release-latest-7.noarch.rpm
 RUN yum repolist
-RUN yum install -y perl-Class-MethodMaker
 
-RUN wget https://dev.mysql.com/get/Downloads/MySQL-Cluster-7.5/mysql-cluster-community-common-7.5.9-1.el7.x86_64.rpm \
-    && wget https://dev.mysql.com/get/Downloads/MySQL-Cluster-7.5/mysql-cluster-community-client-7.5.9-1.el7.x86_64.rpm \
-    && wget https://dev.mysql.com/get/Downloads/MySQL-Cluster-7.5/mysql-cluster-community-server-7.5.9-1.el7.x86_64.rpm \
-    && wget https://dev.mysql.com/get/Downloads/MySQL-Cluster-7.5/mysql-cluster-community-libs-7.5.9-1.el7.x86_64.rpm \
-    && wget https://dev.mysql.com/get/Downloads/MySQL-Cluster-7.5/mysql-cluster-community-libs-compat-7.5.9-1.el7.x86_64.rpm
+RUN yum install -y zip && yum install -y unzip 
 
-RUN yum install -y mysql-cluster-community-common-7.5.9-1.el7.x86_64.rpm \
-    && yum install -y mysql-cluster-community-libs-7.5.9-1.el7.x86_64.rpm \
-    && yum install -y mysql-cluster-community-libs-compat-7.5.9-1.el7.x86_64.rpm \
-    && yum install -y mysql-cluster-community-client-7.5.9-1.el7.x86_64.rpm \
-    && yum install -y mysql-cluster-community-server-7.5.9-1.el7.x86_64.rpm
+RUN cd /usr/bin && wget --no-check-certificate https://www.dropbox.com/s/0vbpc9f3c0w6yow/ndb_programs.zip?dl=0 -O ndb_programs.zip 
+RUN cd /usr/bin && unzip /usr/bin/ndb_programs.zip
 
-CMD ["ndb_mgmd"]
+RUN mv /usr/bin/programs/* /usr/bin/ && rmdir /usr/bin/programs
