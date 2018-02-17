@@ -2,6 +2,6 @@
 version: '2'
 services:
 
-  utility:
+  mysql-cluster-programs:
     image: labbsr0x/mysql-cluster-programs:7.5
     build: .
