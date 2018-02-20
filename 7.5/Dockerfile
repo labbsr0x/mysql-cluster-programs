@@ -14,3 +14,7 @@ RUN yum erase -y wget unzip; yum clean all
 FROM scratch
 
 COPY --from=mysql / /
+
+
+ENTRYPOINT ["/entrypoint.sh"]
+EXPOSE 3306 33060 2202 1186
